@@ -1,16 +1,15 @@
 package com.company;
 
-public class House extends Build {
+public class House extends Building {
     private int quantityRoom;
-    private int stairs;
+
 
     public House() {
     }
 
-    public House(String name, String nameOwner, String address, int size, int quantityRoom, int stairs) {
-        super(name, nameOwner, address, size);
+    public House(int size, int stairs, String color, int amountOfEntrance, int quantityRoom) {
+        super(size, stairs, color, amountOfEntrance);
         this.quantityRoom = quantityRoom;
-        this.stairs = stairs;
     }
 
     public int getQuantityRoom() {
@@ -21,23 +20,14 @@ public class House extends Build {
         this.quantityRoom = quantityRoom;
     }
 
-    public int getStairs() {
-        return stairs;
-    }
-
-    public void setStairs(int stairs) {
-        this.stairs = stairs;
-    }
-
     @Override
     public String toString() {
         return "House{" +
-                "name='" + name + '\'' +
-                ", nameOwner='" + nameOwner + '\'' +
-                ", address='" + address + '\'' +
-                ", size=" + size +
-                ", quantityRoom=" + quantityRoom +
+                "size=" + size +
                 ", stairs=" + stairs +
+                ", color='" + color + '\'' +
+                ", amountOfEntrance=" + amountOfEntrance +
+                ", quantityRoom=" + quantityRoom +
                 '}';
     }
 }

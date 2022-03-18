@@ -1,6 +1,6 @@
 package com.company;
 
-public abstract class Instrument{
+public abstract class Instrument {
     protected String name;
     protected String development;
 
@@ -24,7 +24,7 @@ public abstract class Instrument{
         return development;
     }
 
-    public void setDevelopment(String  development) {
+    public void setDevelopment(String development) {
         this.development = development;
     }
 

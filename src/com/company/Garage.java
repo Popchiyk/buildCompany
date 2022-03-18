@@ -1,18 +1,15 @@
 package com.company;
 
-public class Garage extends Build {
+public class Garage extends Building {
     private int amountOfSpace;
-    private String door;
     private boolean haveCharging;
 
     public Garage() {
     }
 
-    public Garage(String name, String nameOwner, String address, int size, int amountOfSpace, String door,
-                  boolean haveCharging) {
-        super(name, nameOwner, address, size);
+    public Garage(int size, int stairs, String color, int amountOfEntrance, int amountOfSpace, boolean haveCharging) {
+        super(size, stairs, color, amountOfEntrance);
         this.amountOfSpace = amountOfSpace;
-        this.door = door;
         this.haveCharging = haveCharging;
     }
 
@@ -22,14 +19,6 @@ public class Garage extends Build {
 
     public void setAmountOfSpace(int amountOfSpace) {
         this.amountOfSpace = amountOfSpace;
-    }
-
-    public String getDoor() {
-        return door;
-    }
-
-    public void setDoor(String door) {
-        this.door = door;
     }
 
     public boolean isHaveCharging() {
@@ -43,12 +32,11 @@ public class Garage extends Build {
     @Override
     public String toString() {
         return "Garage{" +
-                "name='" + name + '\'' +
-                ", nameOwner='" + nameOwner + '\'' +
-                ", address='" + address + '\'' +
-                ", size=" + size +
+                "size=" + size +
+                ", stairs=" + stairs +
+                ", color='" + color + '\'' +
+                ", amountOfEntrance=" + amountOfEntrance +
                 ", amountOfSpace=" + amountOfSpace +
-                ", door='" + door + '\'' +
                 ", haveCharging=" + haveCharging +
                 '}';
     }

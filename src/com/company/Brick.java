@@ -1,6 +1,7 @@
 package com.company;
+
 //цегла
-public class Brick extends Material{
+public class Brick extends Material {
     private int weight;
     private int size;
     private int quantity;
@@ -46,17 +47,19 @@ public class Brick extends Material{
     }
 
     public void setPrice(int price) {
-        this.price = price;
+        if (price > 0) {
+            this.price = price;
+        } else {
+            System.out.println("Price must not be 0");
+        }
     }
 
-    public int getFullPriceMaterial(){
-        if(this.getWeight() > 350 && this.getSize() > 50){
+    public int getFullPriceMaterial() {
+        if (this.getWeight() > 350 && this.getSize() > 50) {
             this.price += 400;
-        }
-        else if(this.getWeight() > 300 && this.getSize() > 30){
+        } else if (this.getWeight() > 300 && this.getSize() > 30) {
             this.price += 250;
-        }
-        else if(this.getWeight() > 100 && this.getSize() > 20){
+        } else if (this.getWeight() > 100 && this.getSize() > 20) {
             this.price += 150;
         }
         return this.getPrice() * this.getQuantity();

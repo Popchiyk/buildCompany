@@ -11,7 +11,7 @@ public class Engineer extends Employee {
 
     public Engineer(String firstName, String lastName, String country, byte age, LocalDate acceptOnWork,
                     String numberPassport, int workExperience, String education, int salary) {
-        super(firstName, lastName, country, age, acceptOnWork, numberPassport,salary);
+        super(firstName, lastName, country, age, acceptOnWork, numberPassport, salary);
         this.workExperience = workExperience;
         this.education = education;
     }
@@ -32,11 +32,10 @@ public class Engineer extends Employee {
         this.education = education;
     }
 
-    public void calculationSalaryEngineer(){
-        if(this.getWorkExperience() > 3 && this.getEducation().equals("Higher")){
+    public void calculationSalaryEngineer() {
+        if (this.getWorkExperience() > 3 && this.getEducation().equals("Higher")) {
             this.setSalary(500);
-        }
-        else if(this.getWorkExperience() > 2 && this.getEducation().equals("Secondary")){
+        } else if (this.getWorkExperience() > 2 && this.getEducation().equals("Secondary")) {
             this.setSalary(250);
         }
     }

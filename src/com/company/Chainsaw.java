@@ -1,6 +1,7 @@
 package com.company;
+
 //Бензопила
-public class Chainsaw extends Instrument{
+public class Chainsaw extends Instrument {
     private int power;
     private int weight;
     private int tireSize;
@@ -48,7 +49,11 @@ public class Chainsaw extends Instrument{
     }
 
     public void setPrice(int price) {
-        this.price = price;
+        if (price > 0) {
+            this.price = price;
+        } else {
+            System.out.println("Price must not be 0");
+        }
     }
 
     public int getQuantity() {
@@ -59,14 +64,12 @@ public class Chainsaw extends Instrument{
         this.quantity = quantity;
     }
 
-    public int getFullPriceInstrument(){
-        if(this.getPower() > 400 && this.getWeight() > 100 && this.getTireSize() > 50){
+    public int getFullPriceInstrument() {
+        if (this.getPower() > 400 && this.getWeight() > 100 && this.getTireSize() > 50) {
             this.price += 500;
-        }
-        else if(this.getPower() > 300 && this.getWeight() > 80 && this.getTireSize() > 40){
+        } else if (this.getPower() > 300 && this.getWeight() > 80 && this.getTireSize() > 40) {
             this.price += 250;
-        }
-        else if(this.getPower() > 200 && this.getWeight() > 50 && this.getTireSize() > 20){
+        } else if (this.getPower() > 200 && this.getWeight() > 50 && this.getTireSize() > 20) {
             this.price += 150;
         }
         return this.getPrice() * this.getQuantity();

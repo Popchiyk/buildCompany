@@ -1,4 +1,5 @@
 package com.company;
+
 // Шуруповерт
 public class Screwdriver extends Instrument {
     private int voltage;
@@ -56,20 +57,23 @@ public class Screwdriver extends Instrument {
     }
 
     public void setPrice(int price) {
-        this.price = price;
+        if (price > 0) {
+            this.price = price;
+        } else {
+            System.out.println("Price must not be 0");
+        }
+
     }
 
-    public int getFullPriceInstrument(){
-        if(this.getVoltage() > 400 && this.getTorque() > 100 && this.getTurnover() > 50){
+    public void getFullPriceInstrumentScrewdriver() {
+        if (this.getVoltage() > 400 && this.getTorque() > 100 && this.getTurnover() > 50) {
             this.price += 500;
-        }
-        else if(this.getVoltage() > 250 && this.getTorque() > 70 && this.getTurnover() > 40){
+        } else if (this.getVoltage() > 250 && this.getTorque() > 70 && this.getTurnover() > 40) {
             this.price += 250;
-        }
-        else if(this.getVoltage() > 200 && this.getTorque() > 50 && this.getTurnover() > 40){
+        } else if (this.getVoltage() > 200 && this.getTorque() > 50 && this.getTurnover() > 40) {
             this.price += 150;
         }
-        return this.getPrice() * this.getQuantity();
+        this.price *= quantity;
     }
 
     @Override

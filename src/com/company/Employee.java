@@ -2,8 +2,7 @@ package com.company;
 
 import java.time.LocalDate;
 
-public class Employee extends Human{
-    public int age;
+public class Employee extends Human {
     public LocalDate acceptOnWork;
     public String numberPassport;
     public int salary;
@@ -13,19 +12,10 @@ public class Employee extends Human{
 
     public Employee(String firstName, String lastName, String country, int age,
                     LocalDate acceptOnWork, String numberPassport, int salary) {
-        super(firstName, lastName, country);
-        this.age = age;
+        super(firstName, lastName, country, age);
         this.acceptOnWork = acceptOnWork;
         this.numberPassport = numberPassport;
         this.salary = salary;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public LocalDate getAcceptOnWork() {
@@ -41,7 +31,11 @@ public class Employee extends Human{
     }
 
     public void setSalary(int salary) {
-        this.salary = salary;
+        if (salary > 0) {
+            this.salary = salary;
+        } else {
+            System.out.println("Salary must not be 0");
+        }
     }
 
     public String getNumberPassport() {

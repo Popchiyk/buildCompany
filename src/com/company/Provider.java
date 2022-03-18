@@ -1,42 +1,22 @@
 package com.company;
 
-public class Provider extends Human{
-    private int quantity;
-    private int price;
-    private String nameProvider;
+public class Provider extends Human {
+    private String nameCompany;
 
     public Provider() {
     }
 
-    public Provider(String firstName, String lastName, String country, int quantity, int price, String nameProvider) {
-        super(firstName, lastName, country);
-        this.quantity = quantity;
-        this.price = price;
-        this.nameProvider = nameProvider;
+    public Provider(String firstName, String lastName, String country, int age, String nameCompany) {
+        super(firstName, lastName, country, age);
+        this.nameCompany = nameCompany;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public String getNameCompany() {
+        return nameCompany;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public String getNameProvider() {
-        return nameProvider;
-    }
-
-    public void setNameProvider(String nameProvider) {
-        this.nameProvider = nameProvider;
+    public void setNameCompany(String nameCompany) {
+        this.nameCompany = nameCompany;
     }
 
     @Override
@@ -45,9 +25,7 @@ public class Provider extends Human{
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", country='" + country + '\'' +
-                ", quantity=" + quantity +
-                ", price=" + price +
-                ", nameProvider='" + nameProvider + '\'' +
+                ", nameProvider='" + nameCompany + '\'' +
                 '}';
     }
 }

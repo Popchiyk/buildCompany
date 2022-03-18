@@ -1,5 +1,5 @@
 package com.company;
-
+//цегла
 public class Brick extends Material{
     private int weight;
     private int size;

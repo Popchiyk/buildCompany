@@ -1,9 +1,9 @@
 package com.company;
 
-public class Human {
-    public String firstName;
-    public String lastName;
-    public String country;
+public abstract class Human {
+    protected String firstName;
+    protected String lastName;
+    protected String country;
 
     public Human() {
     }

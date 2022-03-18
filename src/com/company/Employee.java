@@ -2,8 +2,8 @@ package com.company;
 
 import java.time.LocalDate;
 
-public abstract class Employee extends Human{
-    public byte age;
+public class Employee extends Human{
+    public int age;
     public LocalDate acceptOnWork;
     public String numberPassport;
     public int salary;
@@ -11,7 +11,7 @@ public abstract class Employee extends Human{
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName, String country, byte age,
+    public Employee(String firstName, String lastName, String country, int age,
                     LocalDate acceptOnWork, String numberPassport, int salary) {
         super(firstName, lastName, country);
         this.age = age;
@@ -20,11 +20,11 @@ public abstract class Employee extends Human{
         this.salary = salary;
     }
 
-    public byte getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(byte age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

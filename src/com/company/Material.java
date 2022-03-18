@@ -1,8 +1,8 @@
 package com.company;
 
 abstract public class Material{
-    public String name;
-    public String developer;
+    protected String name;
+    protected String developer;
 
     public Material() {
     }

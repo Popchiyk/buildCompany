@@ -1,10 +1,10 @@
 package com.company;
 
 public class Build {
-    public String name;
-    public String nameOwner;
-    public String address;
-    public int size;
+    protected String name;
+    protected String nameOwner;
+    protected String address;
+    protected int size;
 
     public Build() {
     }

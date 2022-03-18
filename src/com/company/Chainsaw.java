@@ -3,7 +3,7 @@ package com.company;
 public class Chainsaw extends Instrument{
     private int power;
     private int weight;
-    private int tireLength;
+    private int tireSize;
     private int price;
     private int quantity;
 
@@ -14,7 +14,7 @@ public class Chainsaw extends Instrument{
         super(name, development);
         this.power = power;
         this.weight = weight;
-        this.tireLength = tireLength;
+        this.tireSize = tireLength;
         this.price = price;
         this.quantity = quantity;
     }
@@ -35,12 +35,12 @@ public class Chainsaw extends Instrument{
         this.weight = weight;
     }
 
-    public int getTireLength() {
-        return tireLength;
+    public int getTireSize() {
+        return tireSize;
     }
 
-    public void setTireLength(int tireLength) {
-        this.tireLength = tireLength;
+    public void setTireSize(int tireSize) {
+        this.tireSize = tireSize;
     }
 
     public int getPrice() {
@@ -60,13 +60,13 @@ public class Chainsaw extends Instrument{
     }
 
     public int getFullPriceInstrument(){
-        if(this.getPower() > 400 && this.getWeight() > 100 && this.getTireLength() > 50){
+        if(this.getPower() > 400 && this.getWeight() > 100 && this.getTireSize() > 50){
             this.price += 500;
         }
-        else if(this.getPower() > 300 && this.getWeight() > 80 && this.getTireLength() > 40){
+        else if(this.getPower() > 300 && this.getWeight() > 80 && this.getTireSize() > 40){
             this.price += 250;
         }
-        else if(this.getPower() > 200 && this.getWeight() > 50 && this.getTireLength() > 20){
+        else if(this.getPower() > 200 && this.getWeight() > 50 && this.getTireSize() > 20){
             this.price += 150;
         }
         return this.getPrice() * this.getQuantity();
@@ -77,7 +77,7 @@ public class Chainsaw extends Instrument{
         return "Chainsaw{" +
                 "power=" + power +
                 ", weight=" + weight +
-                ", tireLength=" + tireLength +
+                ", tireLength=" + tireSize +
                 ", price=" + price +
                 ", quantity=" + quantity +
                 '}';

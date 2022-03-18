@@ -1,15 +1,15 @@
 package com.company;
 // Бітон
-public class Сoncrete extends Material{
+public class Concrete extends Material{
     private int weight; //вага
     private int size; //розмір
     private int quantity;
     private int price;
 
-    public Сoncrete() {
+    public Concrete() {
     }
 
-    public Сoncrete(String name, String developer,int price, int weight, int size, int quantity) {
+    public Concrete(String name, String developer, int price, int weight, int size, int quantity) {
         super(name, developer);
         this.weight = weight;
         this.size = size;

@@ -9,7 +9,7 @@ public class Architect extends Employee{
     public Architect() {
     }
 
-    public Architect(String firstName, String lastName, String country, byte age, LocalDate acceptOnWork,
+    public Architect(String firstName, String lastName, String country, int age, LocalDate acceptOnWork,
                      String numberPassport, int workExperience, String education, int salary) {
         super(firstName, lastName, country, age, acceptOnWork, numberPassport,salary);
         this.workExperience = workExperience;

@@ -4,16 +4,14 @@ public class Building {
     protected int size;
     protected int stairs;
     protected String color;
-    protected int amountOfEntrance;
 
     public Building() {
     }
 
-    public Building(int size, int stairs, String color, int amountOfEntrance) {
+    public Building(int size, int stairs, String color) {
         this.size = size;
         this.stairs = stairs;
         this.color = color;
-        this.amountOfEntrance = amountOfEntrance;
     }
 
     public int getSize() {
@@ -40,20 +38,11 @@ public class Building {
         this.color = color;
     }
 
-    public int getAmountOfEntrance() {
-        return amountOfEntrance;
-    }
-
-    public void setAmountOfEntrance(int amountOfEntrance) {
-        this.amountOfEntrance = amountOfEntrance;
-    }
-
     @Override
     public String toString() {
         return "Building{" +
                 "size=" + size +
                 ", stairs=" + stairs +
-                ", stairs=" + amountOfEntrance +
                 ", color='" + color + '\'' +
                 '}';
     }

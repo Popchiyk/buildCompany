@@ -7,8 +7,8 @@ public class Garage extends Building {
     public Garage() {
     }
 
-    public Garage(int size, int stairs, String color, int amountOfEntrance, int amountOfSpace, boolean haveCharging) {
-        super(size, stairs, color, amountOfEntrance);
+    public Garage(int size, int stairs, String color, int amountOfSpace, boolean haveCharging) {
+        super(size, stairs, color);
         this.amountOfSpace = amountOfSpace;
         this.haveCharging = haveCharging;
     }
@@ -35,7 +35,6 @@ public class Garage extends Building {
                 "size=" + size +
                 ", stairs=" + stairs +
                 ", color='" + color + '\'' +
-                ", amountOfEntrance=" + amountOfEntrance +
                 ", amountOfSpace=" + amountOfSpace +
                 ", haveCharging=" + haveCharging +
                 '}';

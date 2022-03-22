@@ -3,12 +3,11 @@ package com.company;
 public class House extends Building {
     private int quantityRoom;
 
-
     public House() {
     }
 
-    public House(int size, int stairs, String color, int amountOfEntrance, int quantityRoom) {
-        super(size, stairs, color, amountOfEntrance);
+    public House(int size, int stairs, String color, int quantityRoom) {
+        super(size, stairs, color);
         this.quantityRoom = quantityRoom;
     }
 
@@ -26,7 +25,6 @@ public class House extends Building {
                 "size=" + size +
                 ", stairs=" + stairs +
                 ", color='" + color + '\'' +
-                ", amountOfEntrance=" + amountOfEntrance +
                 ", quantityRoom=" + quantityRoom +
                 '}';
     }

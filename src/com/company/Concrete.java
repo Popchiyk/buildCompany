@@ -1,7 +1,7 @@
 package com.company;
 
 // Бітон
-public class Concrete extends Material {
+public final class Concrete extends Material implements IMaterial {
     private int weight; //вага
     private int size; //розмір
     private int quantity;
@@ -55,7 +55,7 @@ public class Concrete extends Material {
         }
     }
 
-    public int getFullPriceMaterialConcrete() {
+    public void getPriceMaterial() {
         if (this.getWeight() > 400 && this.getSize() > 50) {
             this.price += 400;
         } else if (this.getWeight() > 300 && this.getSize() > 30) {
@@ -63,7 +63,7 @@ public class Concrete extends Material {
         } else if (this.getWeight() > 100 && this.getSize() > 20) {
             this.price += 150;
         }
-        return this.getPrice() * this.getQuantity();
+        this.price *= this.quantity;
     }
 
     @Override

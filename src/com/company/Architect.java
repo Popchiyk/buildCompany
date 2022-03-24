@@ -2,7 +2,7 @@ package com.company;
 
 import java.time.LocalDate;
 
-public class Architect extends Employee {
+public final class Architect extends Employee implements IWorker {
     private int workExperience;
     private String education;
 
@@ -32,13 +32,14 @@ public class Architect extends Employee {
         this.education = education;
     }
 
-    public void calculationSalaryArchitect() {
+    public void calculateSalary() {
         if (this.getWorkExperience() > 3 && this.getEducation().equals("Higher")) {
             this.setSalary(500);
         } else if (this.getWorkExperience() > 2 && this.getEducation().equals("Secondary")) {
             this.setSalary(250);
         }
     }
+
 
     @Override
     public String toString() {

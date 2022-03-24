@@ -2,7 +2,7 @@ package com.company;
 
 import java.time.LocalDate;
 
-public class Engineer extends Employee {
+public final class Engineer extends Employee implements IWorker {
     private int workExperience;
     private String education;
 
@@ -32,7 +32,7 @@ public class Engineer extends Employee {
         this.education = education;
     }
 
-    public void calculationSalaryEngineer() {
+    public void calculateSalary() {
         if (this.getWorkExperience() > 3 && this.getEducation().equals("Higher")) {
             this.setSalary(500);
         } else if (this.getWorkExperience() > 2 && this.getEducation().equals("Secondary")) {

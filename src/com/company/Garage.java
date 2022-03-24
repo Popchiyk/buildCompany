@@ -1,6 +1,6 @@
 package com.company;
 
-public class Garage extends Building {
+public final class Garage extends Building {
     private int amountOfSpace;
     private boolean haveCharging;
 
@@ -27,6 +27,15 @@ public class Garage extends Building {
 
     public void setHaveCharging(boolean haveCharging) {
         this.haveCharging = haveCharging;
+    }
+
+    @Override
+    public void calculatePrice() {
+        if (size > 20 && stairs > 1 && amountOfSpace > 2 && haveCharging) {
+            System.out.println("Price is" + 300);
+        } else if (size < 20 && stairs < 2 && amountOfSpace < 2 && !haveCharging) {
+            System.out.println("Price is" + 150);
+        }
     }
 
     @Override

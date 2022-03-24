@@ -1,7 +1,7 @@
 package com.company;
 
 // Шуруповерт
-public class Screwdriver extends Instrument {
+public final class Screwdriver extends Instrument implements IInstrument {
     private int voltage;
     private int torque;//обертаючий момент
     private int turnover;//оборот
@@ -65,7 +65,7 @@ public class Screwdriver extends Instrument {
 
     }
 
-    public void getFullPriceInstrumentScrewdriver() {
+    public void getPriceInstrument() {
         if (this.getVoltage() > 400 && this.getTorque() > 100 && this.getTurnover() > 50) {
             this.price += 500;
         } else if (this.getVoltage() > 250 && this.getTorque() > 70 && this.getTurnover() > 40) {

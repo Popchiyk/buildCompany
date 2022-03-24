@@ -1,6 +1,6 @@
 package com.company;
 
-public class Building {
+public abstract class Building {
     protected int size;
     protected int stairs;
     protected String color;
@@ -37,6 +37,12 @@ public class Building {
     public void setColor(String color) {
         this.color = color;
     }
+
+    public final void building(){
+        System.out.println("At now i have final:)");
+    }
+
+    abstract public void calculatePrice();
 
     @Override
     public String toString() {

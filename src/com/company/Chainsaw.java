@@ -1,8 +1,8 @@
 package com.company;
 
 //Бензопила
-public class Chainsaw extends Instrument {
-    private int power;
+public final class Chainsaw extends Instrument implements IInstrument {
+    final int power = 300;
     private int weight;
     private int tireSize;
     private int price;
@@ -11,21 +11,12 @@ public class Chainsaw extends Instrument {
     public Chainsaw() {
     }
 
-    public Chainsaw(String name, String development, int power, int weight, int tireLength, int price, int quantity) {
+    public Chainsaw(String name, String development, int weight, int tireLength, int price, int quantity) {
         super(name, development);
-        this.power = power;
         this.weight = weight;
         this.tireSize = tireLength;
         this.price = price;
         this.quantity = quantity;
-    }
-
-    public int getPower() {
-        return power;
-    }
-
-    public void setPower(int power) {
-        this.power = power;
     }
 
     public int getWeight() {
@@ -64,15 +55,15 @@ public class Chainsaw extends Instrument {
         this.quantity = quantity;
     }
 
-    public int getFullPriceInstrument() {
-        if (this.getPower() > 400 && this.getWeight() > 100 && this.getTireSize() > 50) {
+    public void getPriceInstrument() {
+        if (this.getWeight() > 100 && this.getTireSize() > 50) {
             this.price += 500;
-        } else if (this.getPower() > 300 && this.getWeight() > 80 && this.getTireSize() > 40) {
+        } else if (this.getWeight() > 80 && this.getTireSize() > 40) {
             this.price += 250;
-        } else if (this.getPower() > 200 && this.getWeight() > 50 && this.getTireSize() > 20) {
+        } else if (this.getWeight() > 50 && this.getTireSize() > 20) {
             this.price += 150;
         }
-        return this.getPrice() * this.getQuantity();
+        this.price *= this.quantity;
     }
 
     @Override

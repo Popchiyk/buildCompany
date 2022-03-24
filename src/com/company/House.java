@@ -1,6 +1,6 @@
 package com.company;
 
-public class House extends Building {
+public final class House extends Building {
     private int quantityRoom;
 
     public House() {
@@ -17,6 +17,15 @@ public class House extends Building {
 
     public void setQuantityRoom(int quantityRoom) {
         this.quantityRoom = quantityRoom;
+    }
+
+    @Override
+    public void calculatePrice() {
+        if (size > 20 && stairs > 1 && quantityRoom > 3) {
+            System.out.println("Price is" + 300);
+        } else if (size < 20 && stairs < 2 && quantityRoom < 2) {
+            System.out.println("Price is" + 150);
+        }
     }
 
     @Override

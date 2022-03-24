@@ -1,6 +1,6 @@
 package com.company;
 
-abstract public class Material {
+public abstract class Material {
     protected String name;
     protected String developer;
 

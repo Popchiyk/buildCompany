@@ -5,7 +5,7 @@ import com.company.interfaces.IInstrument;
 //Бензопила
 public final class Chainsaw extends Instrument implements IInstrument {
 
-    final int power = 300;
+    private final int power = 300;
     private int weight;
     private int tireSize;
     private int price;
@@ -59,7 +59,7 @@ public final class Chainsaw extends Instrument implements IInstrument {
     }
 
     @Override
-    public void getPriceInstrument() {
+    public int getPriceInstrument() {
         if (this.getWeight() > 100 && this.getTireSize() > 50) {
             this.price += 500;
         } else if (this.getWeight() > 80 && this.getTireSize() > 40) {
@@ -67,7 +67,7 @@ public final class Chainsaw extends Instrument implements IInstrument {
         } else if (this.getWeight() > 50 && this.getTireSize() > 20) {
             this.price += 150;
         }
-        this.price *= this.quantity;
+        return this.price *= this.quantity;
     }
 
     @Override

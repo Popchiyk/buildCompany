@@ -58,7 +58,7 @@ public final class Brick extends Material implements IMaterial {
     }
 
     @Override
-    public void getPriceMaterial() {
+    public int getPriceMaterial() {
         if (this.getWeight() > 350 && this.getSize() > 50) {
             this.price += 400;
         } else if (this.getWeight() > 300 && this.getSize() > 30) {
@@ -66,7 +66,7 @@ public final class Brick extends Material implements IMaterial {
         } else if (this.getWeight() > 100 && this.getSize() > 20) {
             this.price += 150;
         }
-        this.price *= this.quantity;
+        return this.price *= this.quantity;
     }
 
     @Override

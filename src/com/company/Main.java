@@ -13,7 +13,7 @@ public class Main {
                 "asdadasd", 2, "Highter", 300);
         Architect ar = new Architect("Qwerty", "Qwerty", "Ukraine", 28, LocalDate.now(),
                 "asdadasd", 3, "Highter", 400);
-        a.calculateSalary();
+        a.getCalculateSalary();
         System.out.println(a.toString());
         System.out.println(ar.toString());
         Concrete c = new Concrete("solid", "Ukraine", 200, 100, 150, 3);

@@ -36,12 +36,13 @@ public final class Engineer extends Employee implements IWorker {
     }
 
     @Override
-    public void calculateSalary() {
+    public int getCalculateSalary() {
         if (this.getWorkExperience() > 3 && this.getEducation().equals("Higher")) {
             this.setSalary(500);
         } else if (this.getWorkExperience() > 2 && this.getEducation().equals("Secondary")) {
             this.setSalary(250);
         }
+        return this.salary;
     }
 
     @Override

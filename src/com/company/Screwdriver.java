@@ -67,7 +67,7 @@ public final class Screwdriver extends Instrument implements IInstrument {
     }
 
     @Override
-    public void getPriceInstrument() {
+    public int getPriceInstrument() {
         if (this.getTorque() > 100 && this.getTurnover() > 50) {
             this.price += 500;
         } else if (this.getTorque() > 70 && this.getTurnover() > 40) {
@@ -75,7 +75,7 @@ public final class Screwdriver extends Instrument implements IInstrument {
         } else if (this.getTorque() > 50 && this.getTurnover() > 40) {
             this.price += 150;
         }
-        this.price *= quantity;
+        return this.price *= quantity;
     }
 
     @Override

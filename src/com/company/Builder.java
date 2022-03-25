@@ -32,6 +32,7 @@ public final class Builder extends Employee implements IWorker {
         this.education = education;
     }
 
+    @Override
     public void calculateSalary() {
         if (this.getWorkExperience() > 3 && this.getEducation().equals("Higher")) {
             this.setSalary(500);

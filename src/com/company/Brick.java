@@ -54,6 +54,7 @@ public final class Brick extends Material implements IMaterial {
         }
     }
 
+    @Override
     public void getPriceMaterial() {
         if (this.getWeight() > 350 && this.getSize() > 50) {
             this.price += 400;

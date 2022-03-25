@@ -65,6 +65,7 @@ public final class Screwdriver extends Instrument implements IInstrument {
 
     }
 
+    @Override
     public void getPriceInstrument() {
         if (this.getVoltage() > 400 && this.getTorque() > 100 && this.getTurnover() > 50) {
             this.price += 500;

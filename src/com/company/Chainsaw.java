@@ -55,6 +55,7 @@ public final class Chainsaw extends Instrument implements IInstrument {
         this.quantity = quantity;
     }
 
+    @Override
     public void getPriceInstrument() {
         if (this.getWeight() > 100 && this.getTireSize() > 50) {
             this.price += 500;

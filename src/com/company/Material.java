@@ -20,7 +20,6 @@ public abstract class Material {
         this.name = name;
     }
 
-
     public String getDeveloper() {
         return developer;
     }

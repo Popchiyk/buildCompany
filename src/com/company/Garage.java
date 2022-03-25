@@ -1,6 +1,7 @@
 package com.company;
 
 public final class Garage extends Building {
+
     private int amountOfSpace;
     private boolean haveCharging;
 

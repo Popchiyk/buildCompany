@@ -3,6 +3,7 @@ package com.company;
 import java.time.LocalDate;
 
 public final class Architect extends Employee implements IWorker {
+
     private int workExperience;
     private String education;
 
@@ -40,7 +41,6 @@ public final class Architect extends Employee implements IWorker {
             this.setSalary(250);
         }
     }
-
 
     @Override
     public String toString() {

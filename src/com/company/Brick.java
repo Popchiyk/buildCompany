@@ -2,6 +2,7 @@ package com.company;
 
 //цегла
 public final class Brick extends Material implements IMaterial {
+
     private int weight;
     private int size;
     private int quantity;

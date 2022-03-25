@@ -1,6 +1,7 @@
 package com.company;
 
 public abstract class Instrument {
+
     protected String name;
     protected String development;
 

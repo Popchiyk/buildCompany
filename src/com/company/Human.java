@@ -1,6 +1,7 @@
 package com.company;
 
 public abstract class Human {
+
     protected String firstName;
     protected String lastName;
     protected String country;

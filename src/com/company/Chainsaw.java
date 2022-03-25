@@ -2,6 +2,7 @@ package com.company;
 
 //Бензопила
 public final class Chainsaw extends Instrument implements IInstrument {
+
     final int power = 300;
     private int weight;
     private int tireSize;

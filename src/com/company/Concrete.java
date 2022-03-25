@@ -2,6 +2,7 @@ package com.company;
 
 // Бітон
 public final class Concrete extends Material implements IMaterial {
+
     private int weight; //вага
     private int size; //розмір
     private int quantity;
@@ -33,7 +34,6 @@ public final class Concrete extends Material implements IMaterial {
     public void setSize(int size) {
         this.size = size;
     }
-
 
     public int getQuantity() {
         return quantity;

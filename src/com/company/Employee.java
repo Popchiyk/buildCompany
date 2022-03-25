@@ -3,6 +3,7 @@ package com.company;
 import java.time.LocalDate;
 
 public class Employee extends Human {
+
     public LocalDate acceptOnWork;
     public String numberPassport;
     public int salary;

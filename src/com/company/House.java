@@ -1,6 +1,7 @@
 package com.company;
 
 public final class House extends Building {
+
     private int quantityRoom;
 
     public House() {

@@ -1,7 +1,8 @@
 package com.company;
 
 public class Provider extends Human {
-    private static String nameCompany;
+
+    private static String nameCompany = "Ukrainian Team";
 
     public Provider() {
     }

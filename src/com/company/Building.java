@@ -1,6 +1,7 @@
 package com.company;
 
 public abstract class Building {
+
     protected int size;
     protected int stairs;
     protected String color;

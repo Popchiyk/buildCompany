@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Main {
 
     public static void main(String[] args) {
-        Screwdriver screwdriver = new Screwdriver("SCW-100", 3, "Poland", 400, 200,
+        Screwdriver screwdriver = new Screwdriver("SCW-100", 3, "Poland",200,
                 100, 300);
         screwdriver.getPriceInstrument();
         System.out.println(screwdriver.toString());

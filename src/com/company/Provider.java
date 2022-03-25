@@ -2,14 +2,14 @@ package com.company;
 
 public class Provider extends Human {
 
-    private static String nameCompany = "Ukrainian Team";
+    private String nameCompany = "Ukrainian Team";
 
     public Provider() {
     }
 
     public Provider(String firstName, String lastName, String country, int age, String nameCompany) {
         super(firstName, lastName, country, age);
-        Provider.nameCompany = nameCompany;
+        this.nameCompany = nameCompany;
     }
 
     public String getNameCompany() {
@@ -17,7 +17,7 @@ public class Provider extends Human {
     }
 
     public void setNameCompany(String nameCompany) {
-        Provider.nameCompany = nameCompany;
+        this.nameCompany = nameCompany;
     }
 
     @Override

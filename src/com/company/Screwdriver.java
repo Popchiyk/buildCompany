@@ -4,7 +4,7 @@ import com.company.interfaces.IInstrument;
 
 // Шуруповерт
 public final class Screwdriver extends Instrument implements IInstrument {
-    private int voltage;
+    private static int voltage = 220;
     private int torque;//обертаючий момент
     private int turnover;//оборот
     private int quantity;
@@ -13,9 +13,8 @@ public final class Screwdriver extends Instrument implements IInstrument {
     public Screwdriver() {
     }
 
-    public Screwdriver(String name, int quantity, String development, int voltage, int torque, int turnover, int price) {
+    public Screwdriver(String name, int quantity, String development, int torque, int turnover, int price) {
         super(name, development);
-        this.voltage = voltage;
         this.torque = torque;
         this.turnover = turnover;
         this.quantity = quantity;
@@ -27,7 +26,7 @@ public final class Screwdriver extends Instrument implements IInstrument {
     }
 
     public void setVoltage(int voltage) {
-        this.voltage = voltage;
+        Screwdriver.voltage = voltage;
     }
 
     public int getTorque() {
@@ -69,11 +68,11 @@ public final class Screwdriver extends Instrument implements IInstrument {
 
     @Override
     public void getPriceInstrument() {
-        if (this.getVoltage() > 400 && this.getTorque() > 100 && this.getTurnover() > 50) {
+        if (this.getTorque() > 100 && this.getTurnover() > 50) {
             this.price += 500;
-        } else if (this.getVoltage() > 250 && this.getTorque() > 70 && this.getTurnover() > 40) {
+        } else if (this.getTorque() > 70 && this.getTurnover() > 40) {
             this.price += 250;
-        } else if (this.getVoltage() > 200 && this.getTorque() > 50 && this.getTurnover() > 40) {
+        } else if (this.getTorque() > 50 && this.getTurnover() > 40) {
             this.price += 150;
         }
         this.price *= quantity;

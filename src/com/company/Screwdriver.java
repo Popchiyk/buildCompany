@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.interfaces.IInstrument;
+
 // Шуруповерт
 public final class Screwdriver extends Instrument implements IInstrument {
     private int voltage;

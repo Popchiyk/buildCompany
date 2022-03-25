@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.interfaces.IMaterial;
+
 // Бітон
 public final class Concrete extends Material implements IMaterial {
 

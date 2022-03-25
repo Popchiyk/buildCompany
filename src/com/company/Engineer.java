@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.interfaces.IWorker;
+
 import java.time.LocalDate;
 
 public final class Engineer extends Employee implements IWorker {

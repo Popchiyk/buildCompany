@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.interfaces.IInstrument;
+
 //Бензопила
 public final class Chainsaw extends Instrument implements IInstrument {
 

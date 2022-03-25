@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.interfaces.IMaterial;
+
 //цегла
 public final class Brick extends Material implements IMaterial {
 

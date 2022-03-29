@@ -1,10 +1,15 @@
 package ua.solvd.buildCompany;
 
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import ua.solvd.buildCompany.Exeption.PriceNotMustBeNullException;
 import ua.solvd.buildCompany.interfaces.IMaterial;
 
 //цегла
 public final class Brick extends Material implements IMaterial {
+
+    private static final Logger LOGGER = LogManager.getLogger(Brick.class.getName());
 
     private int weight;
     private int size;
@@ -54,20 +59,25 @@ public final class Brick extends Material implements IMaterial {
         if (price > 0) {
             this.price = price;
         } else {
-            System.out.println("Price must not be 0");
+            LOGGER.error("Price not must be 0");
+            try {
+                throw new PriceNotMustBeNullException();
+            } catch (PriceNotMustBeNullException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     @Override
     public int getPriceMaterial() {
-        if (this.getWeight() > 350 && this.getSize() > 50) {
-            this.price += 400;
-        } else if (this.getWeight() > 300 && this.getSize() > 30) {
-            this.price += 250;
-        } else if (this.getWeight() > 100 && this.getSize() > 20) {
-            this.price += 150;
+        if (weight > 350 && size > 50) {
+            price += 400;
+        } else if (weight > 300 && size > 30) {
+            price += 250;
+        } else if (weight > 100 && size > 20) {
+            price += 150;
         }
-        return this.quantity>0 ? this.price *= this.quantity : 0;
+        return quantity > 0 ? price *= quantity : 0;
     }
 
     @Override

@@ -1,10 +1,12 @@
 package ua.solvd.buildCompany;
 
 
+import ua.solvd.buildCompany.Exeption.SalaryNotMustBeNullException;
 import ua.solvd.buildCompany.interfaces.IInstrument;
 
 // Шуруповерт
 public final class Screwdriver extends Instrument implements IInstrument {
+
     private static int voltage = 220;
     private int torque;//обертаючий момент
     private int turnover;//оборот
@@ -62,21 +64,25 @@ public final class Screwdriver extends Instrument implements IInstrument {
         if (price > 0) {
             this.price = price;
         } else {
-            throw new RuntimeException("Price not must be 0");
+            try {
+                throw new SalaryNotMustBeNullException();
+            } catch (SalaryNotMustBeNullException e) {
+                e.printStackTrace();
+            }
         }
 
     }
 
     @Override
     public int getPriceInstrument() {
-        if (this.getTorque() > 100 && this.getTurnover() > 50) {
-            this.price += 500;
-        } else if (this.getTorque() > 70 && this.getTurnover() > 40) {
-            this.price += 250;
-        } else if (this.getTorque() > 50 && this.getTurnover() > 40) {
-            this.price += 150;
+        if (torque > 100 && turnover > 50) {
+            price += 500;
+        } else if (torque > 70 && turnover > 40) {
+            price += 250;
+        } else if (torque > 50 && turnover > 40) {
+            price += 150;
         }
-        return this.quantity>0 ? this.price *= this.quantity : 0;
+        return quantity > 0 ? price *= quantity : 0;
     }
 
     @Override

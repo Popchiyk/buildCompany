@@ -19,6 +19,9 @@ public class Main {
         System.out.println(ar.toString());
         Concrete c = new Concrete("solid", "Ukraine", 200, 100, 150, 3);
         c.getPriceMaterial();
+        House h = new House(30,3,"Blue",4);
+        h.calculatePrice();
+        System.out.println(h.toString());
         System.out.println(c.toString());
     }
 

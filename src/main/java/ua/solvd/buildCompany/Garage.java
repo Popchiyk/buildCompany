@@ -1,6 +1,11 @@
 package ua.solvd.buildCompany;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 public final class Garage extends Building {
+
+    private static final Logger LOGGER = LogManager.getLogger(Garage.class.getName());
 
     private int amountOfSpace;
     private boolean haveCharging;
@@ -31,12 +36,16 @@ public final class Garage extends Building {
     }
 
     @Override
-    public void calculatePrice() {
+    public int calculatePrice() {
+        int price = 0;
         if (size > 20 && stairs > 1 && amountOfSpace > 2 && haveCharging) {
-            System.out.println("Price is" + 300);
+            price += 300;
+            LOGGER.info("Price " + price);
         } else if (size < 20 && stairs < 2 && amountOfSpace < 2 && !haveCharging) {
-            System.out.println("Price is" + 150);
+            price += 300;
+            LOGGER.info("Price " + price);
         }
+        return price;
     }
 
     @Override

@@ -4,10 +4,12 @@ import java.time.LocalDate;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import ua.solvd.buildCompany.Exeption.SalaryNotMustBeNullException;
 
 public class Employee extends Human {
 
     private static final Logger LOGGER = LogManager.getLogger(Employee.class.getName());
+
     public LocalDate acceptOnWork;
     public String numberPassport;
     public int salary;
@@ -40,7 +42,11 @@ public class Employee extends Human {
             this.salary = salary;
         } else {
             LOGGER.error("Salary not must be 0");
-            throw new RuntimeException();
+            try {
+                throw new SalaryNotMustBeNullException();
+            } catch (SalaryNotMustBeNullException e) {
+                e.printStackTrace();
+            }
         }
     }
 

@@ -43,7 +43,7 @@ public final class Architect extends Employee implements IWorker {
         } else if (this.getWorkExperience() > 2 && this.getEducation().equals("Secondary")) {
             this.setSalary(250);
         }
-        return this.salary;
+        return salary;
     }
 
     @Override

@@ -1,5 +1,7 @@
 package ua.solvd.buildCompany;
 
+import ua.solvd.buildCompany.Exeption.PriceNotMustBeNullException;
+import ua.solvd.buildCompany.Exeption.SalaryNotMustBeNullException;
 import ua.solvd.buildCompany.interfaces.IInstrument;
 
 
@@ -47,7 +49,11 @@ public final class Chainsaw extends Instrument implements IInstrument {
         if (price > 0) {
             this.price = price;
         } else {
-            throw new RuntimeException("Price not must be 0");
+            try {
+                throw new PriceNotMustBeNullException();
+            } catch (PriceNotMustBeNullException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -61,14 +67,14 @@ public final class Chainsaw extends Instrument implements IInstrument {
 
     @Override
     public int getPriceInstrument() {
-        if (this.getWeight() > 100 && this.getTireSize() > 50) {
-            this.price += 500;
-        } else if (this.getWeight() > 80 && this.getTireSize() > 40) {
-            this.price += 250;
-        } else if (this.getWeight() > 50 && this.getTireSize() > 20) {
-            this.price += 150;
+        if (weight > 100 && tireSize > 50) {
+            price += 500;
+        } else if (weight > 80 && tireSize > 40) {
+            price += 250;
+        } else if (weight > 50 && tireSize > 20) {
+            price += 150;
         }
-        return this.quantity>0 ? this.price *= this.quantity : 0;
+        return quantity > 0 ? price *= quantity : 0;
     }
 
     @Override

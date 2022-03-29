@@ -1,6 +1,11 @@
 package ua.solvd.buildCompany;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 public final class House extends Building {
+
+    private static final Logger LOGGER = LogManager.getLogger(House.class.getName());
 
     private int quantityRoom;
 
@@ -21,12 +26,16 @@ public final class House extends Building {
     }
 
     @Override
-    public void calculatePrice() {
+    public int calculatePrice() {
+        int price = 0;
         if (size > 20 && stairs > 1 && quantityRoom > 3) {
-            System.out.println("Price is" + 300);
+            price += 300;
+            LOGGER.info("Price " + price);
         } else if (size < 20 && stairs < 2 && quantityRoom < 2) {
-            System.out.println("Price is" + 150);
+            price += 150;
+            LOGGER.info("Price " + price);
         }
+        return price;
     }
 
     @Override

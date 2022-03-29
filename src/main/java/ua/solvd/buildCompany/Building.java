@@ -43,7 +43,7 @@ public abstract class Building {
         System.out.println("At now i have final:)");
     }
 
-    abstract public void calculatePrice();
+    abstract public int calculatePrice();
 
     @Override
     public String toString() {

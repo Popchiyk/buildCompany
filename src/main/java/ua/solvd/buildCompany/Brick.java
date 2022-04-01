@@ -3,7 +3,7 @@ package ua.solvd.buildCompany;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import ua.solvd.buildCompany.Exeption.PriceNotMustBeNullException;
+import ua.solvd.buildCompany.Exсeption.PriceNotMustBeNullException;
 import ua.solvd.buildCompany.interfaces.IMaterial;
 
 //цегла

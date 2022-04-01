@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import ua.solvd.buildCompany.Exeption.SalaryNotMustBeNullException;
+import ua.solvd.buildCompany.Exсeption.SalaryNotMustBeNullException;
 
 public class Employee extends Human {
 

@@ -1,12 +1,15 @@
 package ua.solvd.buildCompany;
 
-import ua.solvd.buildCompany.Exeption.PriceNotMustBeNullException;
-import ua.solvd.buildCompany.Exeption.SalaryNotMustBeNullException;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import ua.solvd.buildCompany.Exсeption.PriceNotMustBeNullException;
 import ua.solvd.buildCompany.interfaces.IInstrument;
 
 
 //Бензопила
 public final class Chainsaw extends Instrument implements IInstrument {
+
+    private static final Logger LOGGER = LogManager.getLogger(Chainsaw.class.getName());
 
     private final int power = 300;
     private int weight;
@@ -49,6 +52,7 @@ public final class Chainsaw extends Instrument implements IInstrument {
         if (price > 0) {
             this.price = price;
         } else {
+            LOGGER.error("Salary not must be 0");
             try {
                 throw new PriceNotMustBeNullException();
             } catch (PriceNotMustBeNullException e) {

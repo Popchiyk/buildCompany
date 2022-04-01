@@ -1,4 +1,4 @@
-package ua.solvd.buildCompany.Exeption;
+package ua.solvd.buildCompany.Exсeption;
 
 public class SalaryNotMustBeNullException extends Exception{
 

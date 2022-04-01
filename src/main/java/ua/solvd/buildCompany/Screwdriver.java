@@ -1,11 +1,15 @@
 package ua.solvd.buildCompany;
 
 
-import ua.solvd.buildCompany.Exeption.SalaryNotMustBeNullException;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import ua.solvd.buildCompany.Exсeption.SalaryNotMustBeNullException;
 import ua.solvd.buildCompany.interfaces.IInstrument;
 
 // Шуруповерт
 public final class Screwdriver extends Instrument implements IInstrument {
+
+    private static final Logger LOGGER = LogManager.getLogger(Screwdriver.class.getName());
 
     private static int voltage = 220;
     private int torque;//обертаючий момент
@@ -64,6 +68,7 @@ public final class Screwdriver extends Instrument implements IInstrument {
         if (price > 0) {
             this.price = price;
         } else {
+            LOGGER.error("Price not must be 0");
             try {
                 throw new SalaryNotMustBeNullException();
             } catch (SalaryNotMustBeNullException e) {

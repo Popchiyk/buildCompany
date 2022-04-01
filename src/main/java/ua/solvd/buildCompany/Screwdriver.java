@@ -68,11 +68,11 @@ public final class Screwdriver extends Instrument implements IInstrument {
         if (price > 0) {
             this.price = price;
         } else {
-            LOGGER.error("Price not must be 0");
             try {
                 throw new SalaryNotMustBeNullException();
             } catch (SalaryNotMustBeNullException e) {
                 e.printStackTrace();
+                LOGGER.error(e.getMessage());
             }
         }
 

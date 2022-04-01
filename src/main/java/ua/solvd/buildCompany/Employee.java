@@ -41,11 +41,11 @@ public class Employee extends Human {
         if (salary > 0) {
             this.salary = salary;
         } else {
-            LOGGER.error("Salary not must be 0");
             try {
                 throw new SalaryNotMustBeNullException();
             } catch (SalaryNotMustBeNullException e) {
                 e.printStackTrace();
+                LOGGER.error(e.getMessage());
             }
         }
     }

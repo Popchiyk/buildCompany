@@ -17,8 +17,9 @@ public class Main {
         a.setSalary(0);
         System.out.println(a.toString());
         System.out.println(ar.toString());
-        Concrete c = new Concrete("solid", "Ukraine", 200, 100, 150, 3);
-        c.getPriceMaterial();
+        Concrete c = new Concrete("solid", "Ukraine", 0, 100, 150, 3);
+        //c.getPriceMaterial();
+        c.setPrice(0);
         House h = new House(30,3,"Blue",4);
         h.calculatePrice();
         System.out.println(h.toString());

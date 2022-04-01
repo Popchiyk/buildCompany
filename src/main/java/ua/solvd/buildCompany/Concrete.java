@@ -59,11 +59,12 @@ public final class Concrete extends Material implements IMaterial {
         if (price > 0) {
             this.price = price;
         } else {
-            LOGGER.error("Price not must be 0");
+
             try {
                 throw new PriceNotMustBeNullException();
             } catch (PriceNotMustBeNullException e) {
                 e.printStackTrace();
+                LOGGER.error(e.getMessage());
             }
         }
     }

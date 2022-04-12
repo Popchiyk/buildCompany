@@ -1,6 +1,7 @@
 package ua.solvd.buildCompany;
 
 
+import org.apache.commons.lang3.StringUtils;
 import ua.solvd.buildCompany.enums.Education;
 import ua.solvd.buildCompany.interfaces.IWorker;
 
@@ -39,9 +40,9 @@ public final class Architect extends Employee implements IWorker {
 
     @Override
     public int getCalculateSalary() {
-        if (workExperience > 3 && education.equals(Education.HIGHER)) {
+        if (workExperience > 3 && StringUtils.equals(education.getValue(),Education.HIGHER.getValue())) {
             salary = 500;
-        } else if (workExperience > 2 && education.equals(Education.SECONDARY)) {
+        } else if (workExperience > 2 && StringUtils.equals(education.getValue(),Education.SECONDARY.getValue())) {
             salary = 250;
         }
         return salary;

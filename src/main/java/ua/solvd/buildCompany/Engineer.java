@@ -1,5 +1,6 @@
 package ua.solvd.buildCompany;
 
+import ua.solvd.buildCompany.enums.Education;
 import ua.solvd.buildCompany.interfaces.IWorker;
 
 import java.time.LocalDate;
@@ -7,13 +8,13 @@ import java.time.LocalDate;
 public final class Engineer extends Employee implements IWorker {
 
     private int workExperience;
-    private String education;
+    private Education education;
 
     public Engineer() {
     }
 
-    public Engineer(String firstName, String lastName, String country, byte age, LocalDate acceptOnWork,
-                    String numberPassport, int workExperience, String education, int salary) {
+    public Engineer(String firstName, String lastName, String country, int age, LocalDate acceptOnWork,
+                    String numberPassport, int salary, int workExperience, Education education) {
         super(firstName, lastName, country, age, acceptOnWork, numberPassport, salary);
         this.workExperience = workExperience;
         this.education = education;
@@ -27,11 +28,11 @@ public final class Engineer extends Employee implements IWorker {
         this.workExperience = workExperience;
     }
 
-    public String getEducation() {
+    public Education getEducation() {
         return education;
     }
 
-    public void setEducation(String education) {
+    public void setEducation(Education education) {
         this.education = education;
     }
 

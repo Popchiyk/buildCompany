@@ -19,7 +19,7 @@ public final class Brick extends Material implements IMaterial {
     public Brick() {
     }
 
-    public Brick(String name, int price, String developer, int weight, int size, int quantity) {
+    public Brick(String name, String developer, int weight, int size, int quantity, int price) {
         super(name, developer);
         this.weight = weight;
         this.size = size;

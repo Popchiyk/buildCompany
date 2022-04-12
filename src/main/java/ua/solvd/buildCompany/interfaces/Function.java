@@ -1,7 +1,6 @@
 package ua.solvd.buildCompany.interfaces;
 
 @FunctionalInterface
-public interface IWorker {
-    int getCalculateSalary();
-
+public interface Function<T,R> {
+    R apply(T t);
 }

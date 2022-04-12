@@ -1,6 +1,7 @@
 package ua.solvd.buildCompany;
 
 
+import ua.solvd.buildCompany.enums.Education;
 import ua.solvd.buildCompany.interfaces.IWorker;
 
 import java.time.LocalDate;
@@ -8,13 +9,13 @@ import java.time.LocalDate;
 public final class Architect extends Employee implements IWorker {
 
     private int workExperience;
-    private String education;
+    private Education education;
 
     public Architect() {
     }
 
     public Architect(String firstName, String lastName, String country, int age, LocalDate acceptOnWork,
-                     String numberPassport, int workExperience, String education, int salary) {
+                     String numberPassport, int workExperience, Education education, int salary) {
         super(firstName, lastName, country, age, acceptOnWork, numberPassport, salary);
         this.workExperience = workExperience;
         this.education = education;
@@ -28,20 +29,20 @@ public final class Architect extends Employee implements IWorker {
         this.workExperience = workExperience;
     }
 
-    public String getEducation() {
+    public Education getEducation() {
         return education;
     }
 
-    public void setEducation(String education) {
+    public void setEducation(Education education) {
         this.education = education;
     }
 
     @Override
     public int getCalculateSalary() {
-        if (this.getWorkExperience() > 3 && this.getEducation().equals("Higher")) {
-            this.setSalary(500);
-        } else if (this.getWorkExperience() > 2 && this.getEducation().equals("Secondary")) {
-            this.setSalary(250);
+        if (workExperience > 3 && education.equals(Education.HIGHER)) {
+            salary = 500;
+        } else if (workExperience > 2 && education.equals(Education.SECONDARY)) {
+            salary = 250;
         }
         return salary;
     }

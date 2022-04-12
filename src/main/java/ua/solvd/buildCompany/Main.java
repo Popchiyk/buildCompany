@@ -1,5 +1,7 @@
 package ua.solvd.buildCompany;
 
+import ua.solvd.buildCompany.enums.Education;
+
 import java.time.LocalDate;
 
 public class Main {
@@ -10,9 +12,9 @@ public class Main {
         screwdriver.getPriceInstrument();
         System.out.println(screwdriver.toString());
         Architect a = new Architect("Qwerty", "Qwerty", "Ukraine", 28, LocalDate.now(),
-                "asdadasd", 2, "Highter", 300);
+                "asdadasd", 2, Education.HIGHER, 300);
         Architect ar = new Architect("Qwerty", "Qwerty", "Ukraine", 28, LocalDate.now(),
-                "asdadasd", 3, "Highter", 0);
+                "asdadasd", 3, Education.HIGHER, 0);
         ar.getCalculateSalary();
         a.setSalary(0);
         System.out.println(a.toString());

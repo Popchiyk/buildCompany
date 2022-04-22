@@ -7,14 +7,20 @@ import org.apache.log4j.Logger;
 import ua.solvd.buildCompany.enums.Education;
 import ua.solvd.buildCompany.interfaces.*;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.stream.Collectors;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException, ExecutionException, InterruptedException {
         int randomTorque = RandomUtils.nextInt(51, 200);
         final Logger LOGGER = LogManager.getLogger(Main.class.getName());
         List<IInstrument> instrumentList = new ArrayList<>(
@@ -51,9 +57,12 @@ public class Main {
                         new Concrete("Light","Ukraine",250,150,30,200)
                 )
         );
+        Architect a = new Architect("Qwerty", "Qwerty", "Ukraine", 28, LocalDate.now(),
+                "asdadasd", 3, Education.SECONDARY, 300);
+        Architect ba = new Architect("Qwerty", "Qwerty", "Ukraine", 28, LocalDate.now(),
+                "asdadasd", 3, Education.SECONDARY, 300);
         IWorker w = () -> {
-            Architect a = new Architect("Qwerty", "Qwerty", "Ukraine", 28, LocalDate.now(),
-                    "asdadasd", 3, Education.SECONDARY, 300);
+
             int salary = 0;
             if (a.getWorkExperience() > 3 && StringUtils.equals(a.getEducation().getValue(),
                     Education.HIGHER.getValue())) {
@@ -78,6 +87,20 @@ public class Main {
         LOGGER.info("Converter Brick in Concrete "+concrete.toString());
         Function<String,Integer> valueString = Integer::valueOf;
         LOGGER.info("Convert string to Integer "+valueString.apply("322"));
+
+        Class<?> providerClass = Class.forName("ua.solvd.buildCompany.Provider");
+        Constructor<?>[] constructors = providerClass.getConstructors();
+        LOGGER.info("Constructor length into Provider "+constructors.length);;
+        Field[] fields = providerClass.getDeclaredFields();
+        Method[] methods = providerClass.getDeclaredMethods();
+        List<Method> actualMethod = Arrays.stream(methods).collect(Collectors.toList());
+        List<Field> actualFields = Arrays.stream(fields).collect(Collectors.toList());
+        LOGGER.info("Fields with class Provider "+actualFields);
+        LOGGER.info("Methods with class Provider "+actualMethod);
+        CompletableFuture<Void> completableFuture = CompletableFuture.supplyAsync(a::getCalculateSalary)
+                .thenAcceptBothAsync(CompletableFuture.supplyAsync(ba::getCalculateSalary),
+                        (s1,s2) -> LOGGER.info("Completable Future Async sum two method "+(s1 + s2)));
+        completableFuture.get();
     }
 
 }

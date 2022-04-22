@@ -1,5 +1,9 @@
-2022-04-12 18:28:46 INFO  Main:68 - Calculate used lambda by interface = 550
-2022-04-12 18:28:46 INFO  Main:72 - sumScrewdriver used stream = 3550.0
-2022-04-12 18:28:46 INFO  Main:73 - sumTotalInstrument used stream = 9650.0
-2022-04-12 18:28:46 INFO  Main:78 - Converter Brick in Concrete Concrete{name='Ceramics', developer='Ukraine', weight=200, size=20, quantity=3, price=250}
-2022-04-12 18:28:46 INFO  Main:80 - Convert string to Integer String ua.solvd.buildCompany.Main$$Lambda$14/693632176@1376c05cInteger322
+2022-04-22 16:29:27 INFO  Main:77 - Calculate used lambda by interface = 550
+2022-04-22 16:29:27 INFO  Main:81 - sumScrewdriver used stream = 3550.0
+2022-04-22 16:29:27 INFO  Main:82 - sumTotalInstrument used stream = 9650.0
+2022-04-22 16:29:27 INFO  Main:87 - Converter Brick in Concrete Concrete{name='Ceramics', developer='Ukraine', weight=200, size=20, quantity=3, price=250}
+2022-04-22 16:29:27 INFO  Main:89 - Convert string to Integer 322
+2022-04-22 16:29:27 INFO  Main:93 - Constructor length into Provider 1
+2022-04-22 16:29:27 INFO  Main:98 - Fields with class Provider [private java.lang.String ua.solvd.buildCompany.Provider.nameCompany]
+2022-04-22 16:29:27 INFO  Main:99 - Methods with class Provider [public java.lang.String ua.solvd.buildCompany.Provider.toString(), public java.lang.String ua.solvd.buildCompany.Provider.getNameCompany(), public void ua.solvd.buildCompany.Provider.setNameCompany(java.lang.String)]
+2022-04-22 16:29:27 INFO  Main:102 - Completable Future Async sum two method 500

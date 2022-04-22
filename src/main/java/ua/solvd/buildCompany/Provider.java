@@ -7,10 +7,10 @@ public class Provider extends Human {
     public Provider() {
     }
 
-    public Provider(String firstName, String lastName, String country, int age, String nameCompany) {
-        super(firstName, lastName, country, age);
-        this.nameCompany = nameCompany;
-    }
+//    public Provider(String firstName, String lastName, String country, int age, String nameCompany) {
+//        super(firstName, lastName, country, age);
+//        this.nameCompany = nameCompany;
+//    }
 
     public String getNameCompany() {
         return nameCompany;
